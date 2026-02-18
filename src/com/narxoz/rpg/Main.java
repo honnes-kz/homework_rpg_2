@@ -1,5 +1,10 @@
 package com.narxoz.rpg;
 
+import com.narxoz.rpg.factory.EnemyComponentFactory;
+import com.narxoz.rpg.factory.FireComponentFactory;
+import com.narxoz.rpg.factory.IceComponentFactory;
+import com.narxoz.rpg.factory.ShadowComponentFactory;
+
 /**
  * Main demonstration class for the RPG Enemy System.
  *
@@ -42,26 +47,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== RPG Enemy System - Creational Patterns Capstone ===\n");
 
-        // ============================================================
-        // PART 1: ABSTRACT FACTORY PATTERN
-        // ============================================================
-        // TODO: Create themed component factories
-        //   - FireComponentFactory
-        //   - IceComponentFactory
-        //   - ShadowComponentFactory
-        //
-        // TODO: Show that each factory creates MATCHING components
-        //   EnemyComponentFactory fireFactory = new FireComponentFactory();
-        //   List<Ability> fireAbilities = fireFactory.createAbilities();
-        //   LootTable fireLoot = fireFactory.createLootTable();
-        //   String fireAI = fireFactory.createAIBehavior();
-        //
-        // TODO: Display the components from each factory
-        //   Show that Fire factory creates fire abilities + fire loot
-        //   Show that Ice factory creates ice abilities + ice loot
-        //   Show that they CANNOT be mixed (consistency guaranteed!)
-        //
-        // Think: How is this similar to HW1's EquipmentFactory?
+        EnemyComponentFactory fireFactory = new FireComponentFactory();
+        EnemyComponentFactory iceFactory = new IceComponentFactory();
+        EnemyComponentFactory shadowFactory = new ShadowComponentFactory();
 
         System.out.println("============================================");
         System.out.println("PART 1: ABSTRACT FACTORY - Themed Components");
