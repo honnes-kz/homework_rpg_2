@@ -32,14 +32,12 @@ package com.narxoz.rpg.loot;
  * - String getLootInfo()
  * - LootTable clone()   <-- Critical for Prototype pattern!
  */
-public interface LootTable {
+public interface LootTable extends Cloneable{
 
-    // TODO: Define loot table behavior methods
-    // Consider:
-    // - List<String> getItems()
-    // - int getGoldDrop()
-    // - int getExperienceDrop()
-    // - String getLootInfo()
-    // - LootTable clone()  <-- IMPORTANT for deep copying!
+    List<String> getItems();
+    int getGoldDrop();
+    int getExperienceDrop();
+    String getLootInfo();
+    LootTable clone();
 
 }
