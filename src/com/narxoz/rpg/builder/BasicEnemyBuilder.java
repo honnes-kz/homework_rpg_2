@@ -15,37 +15,59 @@ public class BasicEnemyBuilder implements EnemyBuilder {
     private String ai;
 
     public EnemyBuilder setName(String name) {
-        this.name = name; return this;
+        this.name = name;{
+            return this;
+        }
     }
     public EnemyBuilder setHealth(int health) {
-        this.health = health; return this;
+        this.health = health;{
+            return this;
+        }
     }
     public EnemyBuilder setDamage(int damage) {
-        this.damage = damage; return this;
+        this.damage = damage;{
+            return this;
+        }
     }
     public EnemyBuilder setDefense(int defense) {
-        this.defense = defense; return this;
+        this.defense = defense;{
+            return this;
+        }
     }
     public EnemyBuilder setSpeed(int speed) {
-        this.speed = speed; return this;
+        this.speed = speed;{
+            return this;
+        }
     }
     public EnemyBuilder setElement(String element) {
-        this.element = element; return this;
+        this.element = element;{
+            return this;
+        }
     }
     public EnemyBuilder addAbility(Ability ability) {
-        this.abilities.add(ability); return this;
+        this.abilities.add(ability);{
+            return this;
+        }
     }
     public EnemyBuilder setAbilities(List<Ability> abilities) {
-        this.abilities = new ArrayList<>(abilities); return this;
+        this.abilities = new ArrayList<>(abilities);{
+            return this;
+        }
     }
     public EnemyBuilder addPhase(int phaseNumber, int healthThreshold) {
-        this.phases.put(phaseNumber, healthThreshold); return this;
+        this.phases.put(phaseNumber, healthThreshold);{
+            return this;
+        }
     }
     public EnemyBuilder setLootTable(LootTable loot) {
-        this.loot = loot; return this;
+        this.loot = loot;{
+            return this;
+        }
     }
     public EnemyBuilder setAI(String ai) {
-        this.ai = ai; return this;
+        this.ai = ai;{
+            return this;
+        }
     }
 
     public Enemy build() {

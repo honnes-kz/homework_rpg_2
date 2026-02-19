@@ -1,5 +1,11 @@
 package com.narxoz.rpg.builder;
 
+import com.narxoz.rpg.enemy.Enemy;
+import com.narxoz.rpg.factory.EnemyComponentFactory;
+import com.narxoz.rpg.factory.FireComponentFactory;
+import com.narxoz.rpg.factory.IceComponentFactory;
+import com.narxoz.rpg.factory.ShadowComponentFactory;
+
 public class EnemyDirector {
 
     public Enemy createMinion(EnemyComponentFactory factory) {
@@ -65,9 +71,15 @@ public class EnemyDirector {
             .build();
     }
     private String extractElement(EnemyComponentFactory factory) {
-        if (factory instanceof FireComponentFactory) return "FIRE";
-        if (factory instanceof IceComponentFactory) return "ICE";
-        if (factory instanceof ShadowComponentFactory) return "SHADOW";
-        return "NEUTRAL";
+        if (factory instanceof FireComponentFactory){
+            return "Fire";
+        }
+        if (factory instanceof IceComponentFactory){
+            return "Ice";
+        }
+        if (factory instanceof ShadowComponentFactory){
+            return "Shadow";
+        }
+        return "Neutral";
     }
 }

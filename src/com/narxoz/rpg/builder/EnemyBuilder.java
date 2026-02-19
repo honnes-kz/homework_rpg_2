@@ -1,5 +1,10 @@
 package com.narxoz.rpg.builder;
 
+import java.util.List;
+import com.narxoz.rpg.enemy.Enemy;
+import com.narxoz.rpg.combat.Ability;
+import com.narxoz.rpg.loot.LootTable;
+
 public interface EnemyBuilder {
 
     EnemyBuilder setName(String name);
