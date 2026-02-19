@@ -13,10 +13,10 @@ public class ShadowComponentFactory implements EnemyComponentFactory{
     public List<Ability> createAbilities(){
         return List.of(new ShadowStrike(),new Vanish());
     }
-    public LootTable creatLootTable(){
+    public LootTable createLootTable(){
         return new ShadowLootTable();
     }
-    public String createAIBehavior(){
+    public String createAI(){
         return "Tactical";
     }
 }

@@ -1,5 +1,10 @@
 package com.narxoz.rpg.enemy;
 
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.Collections;
+
 public class EnemyRegistry {
     private final Map<String, Enemy> templates = new HashMap<>();
 

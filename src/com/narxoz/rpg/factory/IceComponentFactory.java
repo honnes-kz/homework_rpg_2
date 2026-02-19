@@ -13,10 +13,10 @@ public class IceComponentFactory implements EnemyComponentFactory{
     public List<Ability> createAbilities(){
         return List.of(new FrostBreath(),new IceShield());
     }
-    public LootTable creatLootTable(){
+    public LootTable createLootTable(){
         return new IceLootTable();
     }
-    public String createAIBehavior(){
+    public String createAI(){
         return "Defensive";
     }
 }

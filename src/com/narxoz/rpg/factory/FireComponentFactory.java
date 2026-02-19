@@ -13,10 +13,10 @@ public class FireComponentFactory implements EnemyComponentFactory{
     public List<Ability> createAbilities(){
         return List.of(new FlameBreath(),new FireShield());
     }
-    public LootTable creatLootTable(){
+    public LootTable createLootTable(){
         return new FireLootTable();
     }
-    public String createAIBehavior(){
+    public String createAI(){
         return "Aggresive";
     }
 

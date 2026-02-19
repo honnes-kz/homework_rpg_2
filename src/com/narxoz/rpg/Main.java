@@ -6,18 +6,9 @@ import com.narxoz.rpg.factory.*;
 import com.narxoz.rpg.combat.*;
 import com.narxoz.rpg.loot.*;
 
-import com.narxoz.rpg.enemy.Enemy;
-import com.narxoz.rpg.enemy.BossEnemyBuilder;
-import com.narxoz.rpg.factory.EnemyComponentFactory;
-import com.narxoz.rpg.factory.FireComponentFactory;
-
 public class Main {
 
     public static void main(String[] args) {
-
-        System.out.println("============================================");
-        System.out.println("PART 1: ABSTRACT FACTORY - Themed Components");
-        System.out.println("============================================\n");
 
         EnemyComponentFactory fireFactory = new FireComponentFactory();
         EnemyComponentFactory iceFactory = new IceComponentFactory();
@@ -35,10 +26,6 @@ public class Main {
         shadowFactory.createAbilities().forEach(a ->
         System.out.println("- " + a.getName()));
 
-        System.out.println("\n============================================");
-        System.out.println("PART 2: BUILDER - Complex Enemy Construction");
-        System.out.println("============================================\n");
-
         Enemy dragon = new BossEnemyBuilder()
                 .setName("Ancient Fire Dragon")
                 .setHealth(50000)
@@ -48,7 +35,7 @@ public class Main {
                 .setElement("FIRE")
                 .setAbilities(fireFactory.createAbilities())
                 .setLootTable(fireFactory.createLootTable())
-                .setAI(fireFactory.createAIBehavior())
+                .setAI(fireFactory.createAI())
                 .addPhase(1, 50000)
                 .addPhase(2, 30000)
                 .addPhase(3, 15000)
@@ -65,10 +52,6 @@ public class Main {
         displayEnemy(miniBoss);
         displayEnemy(raidBoss);
 
-        System.out.println("\n============================================");
-        System.out.println("PART 3: PROTOTYPE - Enemy Cloning & Variants");
-        System.out.println("============================================\n");
-
         EnemyRegistry registry = new EnemyRegistry();
         registry.registerTemplate("dragon", dragon);
 
@@ -81,10 +64,6 @@ public class Main {
         System.out.println("Original ability object == Clone ability object ?");
         System.out.println(dragon.getAbilities().get(0)== clonedDragon.getAbilities().get(0));
 
-        System.out.println("\n============================================");
-        System.out.println("PART 4: ALL PATTERNS WORKING TOGETHER");
-        System.out.println("============================================\n");
-
         EnemyComponentFactory shadowFactory2 = new ShadowComponentFactory();
 
         Enemy demonLord = new BossEnemyBuilder()
@@ -96,21 +75,19 @@ public class Main {
                 .setElement("SHADOW")
                 .setAbilities(shadowFactory2.createAbilities())
                 .setLootTable(shadowFactory2.createLootTable())
-                .setAI(shadowFactory2.createAIBehavior())
+                .setAI(shadowFactory2.createAI())
                 .addPhase(1, 80000)
                 .addPhase(2, 40000)
                 .build();
 
         registry.registerTemplate("demon-lord", demonLord);
+
         Enemy greaterDemon = registry.createFromTemplate("demon-lord");
+
         System.out.println("Base Demon Lord:");
         displayEnemy(demonLord);
         System.out.println("\nCloned Greater Demon:");
         displayEnemy(greaterDemon);
-
-        System.out.println("\n============================================");
-        System.out.println("PATTERN SUMMARY");
-        System.out.println("============================================\n");
 
         System.out.println("Abstract Factory: Fire, Ice, Shadow themed components");
         System.out.println("Builder: Step-by-step complex enemy construction");

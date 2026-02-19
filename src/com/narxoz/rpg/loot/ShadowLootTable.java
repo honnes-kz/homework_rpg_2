@@ -1,5 +1,9 @@
 package com.narxoz.rpg.loot;
 
+import java.util.List;
+import java.util.ArrayList;
+
+
 public class ShadowLootTable implements LootTable {
     private final List<String> items = List.of("Shadow Gem", "Dark Essence", "Shadow Rune");
     private final int goldDrop = 90;
@@ -12,6 +16,9 @@ public class ShadowLootTable implements LootTable {
     }
     public int getExperienceDrop() {
         return xpDrop;
+    }
+    public String getLootInfo(){
+        return "Gold:" + goldDrop + "Xp:" + xpDrop; 
     }
     public ShadowLootTable clone() {
         return new ShadowLootTable();

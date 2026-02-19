@@ -5,6 +5,7 @@ import com.narxoz.rpg.loot.LootTable;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -63,7 +64,7 @@ public class DragonBoss implements Enemy {
     public LootTable getLootTable() {
         return lootTable;
     }
-    public String getAI() {
+    public String getaiBehavior() {
         return aiBehavior;
     }
     public Map<Integer, Integer> getPhases() {
