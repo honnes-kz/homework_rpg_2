@@ -36,4 +36,16 @@ public interface Ability extends Cloneable {
     AbilityType getType();
     Ability clone();
 
+    public enum AbilityType {
+    Attack,
+    Fire,
+    Defense,
+    Magic,
+    Heal,
+    Burn,
+    BurnDefense,
+    Ice,
+    Shadow
+}
+
 }
